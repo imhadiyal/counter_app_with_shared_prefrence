@@ -13,9 +13,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData().copyWith(
-          appBarTheme: const AppBarTheme(
-        color: Colors.blue,
-      )),
+        appBarTheme: const AppBarTheme(
+          color: Colors.blue,
+        ),
+      ),
       darkTheme: ThemeData.dark(
         useMaterial3: true,
       ).copyWith(

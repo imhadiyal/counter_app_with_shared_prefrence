@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theme/pages/DetailsPage/details_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,6 +14,24 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("HomePage"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Route route = MaterialPageRoute(
+                  builder: (context) => const DetailsPage(),
+                );
+                Navigator.push(context, route);
+              },
+              icon: Icon(Icons.add)),
+        ],
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("heading"),
+          ],
+        ),
       ),
     );
   }
