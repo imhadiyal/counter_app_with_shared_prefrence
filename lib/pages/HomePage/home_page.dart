@@ -22,8 +22,11 @@ class _HomePageState extends State<HomePage> {
                 );
                 Navigator.push(context, route);
               },
-              icon: Icon(Icons.add)),
+              icon: const Icon(Icons.add)),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
       ),
       body: const Center(
         child: Column(

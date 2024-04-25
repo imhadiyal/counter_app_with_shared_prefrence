@@ -15,7 +15,6 @@ class _DetailsPageState extends State<DetailsPage> {
         title: const Text("DetailPage"),
       ),
       drawer: Drawer(
-        width: 100,
         child: Column(
           children: [
             const UserAccountsDrawerHeader(
@@ -31,12 +30,7 @@ class _DetailsPageState extends State<DetailsPage> {
       ),
       body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Drawer(
-            child: Text("Drawer"),
-            width: 100,
-          ),
-        ],
+        children: [],
       ),
     );
   }

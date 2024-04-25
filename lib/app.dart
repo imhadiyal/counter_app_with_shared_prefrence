@@ -13,6 +13,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData().copyWith(
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: Colors.green,
+          surfaceTintColor: Colors.blue,
+          scrimColor: Colors.red,
+          elevation: 10,
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.blue,
         ),
@@ -20,12 +26,15 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(
         useMaterial3: true,
       ).copyWith(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            backgroundColor: Colors.red, foregroundColor: Colors.white),
         appBarTheme: const AppBarTheme(
           color: Colors.red,
         ),
+        colorScheme: const ColorScheme.dark(),
       ),
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       home: const HomePage(),
     );
   }
