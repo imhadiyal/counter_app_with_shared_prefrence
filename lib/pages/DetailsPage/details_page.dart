@@ -30,7 +30,11 @@ class _DetailsPageState extends State<DetailsPage> {
       ),
       body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [],
+        children: [
+          AlertDialog(
+            title: Text("AlertDialog"),
+          ),
+        ],
       ),
     );
   }

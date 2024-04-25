@@ -26,6 +26,9 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(
         useMaterial3: true,
       ).copyWith(
+        dialogTheme: const DialogTheme(
+          backgroundColor: Colors.amber,
+        ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
             backgroundColor: Colors.red, foregroundColor: Colors.white),
         appBarTheme: const AppBarTheme(
