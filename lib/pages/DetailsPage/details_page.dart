@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class DetailsPage extends StatefulWidget {
+class DetailsPage extends StatelessWidget {
   const DetailsPage({super.key});
 
-  @override
-  State<DetailsPage> createState() => _DetailsPageState();
-}
-
-class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +18,7 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
             ...List.generate(
               7,
-              (index) => Text("hello"),
+              (index) => const Text("hello"),
             ),
           ],
         ),

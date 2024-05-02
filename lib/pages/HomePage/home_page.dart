@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:theme/controller/counter_controller.dart';
+import 'package:theme/modals/counter_modal.dart';
 import 'package:theme/pages/DetailsPage/details_page.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +26,39 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("heading"),
+            Text(
+              Provider.of<CounterProvider>(context).getCuont.toString(),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Provider.of<CounterProvider>(context, listen: false)
+                        .decremrnt();
+                  },
+                  child: const Icon(Icons.remove),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Provider.of<CounterProvider>(context, listen: false)
+                        .reset();
+                  },
+                  child: const Icon(Icons.lock_reset_rounded),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Provider.of<CounterProvider>(context, listen: false)
+                        .increment();
+                  },
+                  child: const Icon(Icons.add),
+                ),
+              ],
+            ),
           ],
         ),
       ),
