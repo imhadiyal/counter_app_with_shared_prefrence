@@ -5,14 +5,18 @@ import 'package:theme/controller/counter_controller.dart';
 
 import 'app.dart';
 
-void main() {
-// Future<void> main() async {
-  // final SharedPreferences preferences = await SharedPreferences.getInstance();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final SharedPreferences preferences = await SharedPreferences.getInstance();
+  int counter = preferences.getInt('counts') ?? 0;
 
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CounterProvider())
+        ChangeNotifierProvider(
+          create: (context) =>
+              CounterProvider(counts: counter, preferences: preferences),
+        )
       ],
       child: const MyApp(),
     ),
